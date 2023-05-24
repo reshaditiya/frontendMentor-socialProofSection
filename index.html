@@ -1,153 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <title>Frontend Mentor | Social proof section</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<title>Frontend Mentor | Social proof section</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js"></script>
-    <script>
-      const config = window.__unocss_runtime.uno.config;
-      const configColor = config.theme.colors;
-      const configFamily = config.theme.fontFamily;
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js"></script>
+		<script>
+			const config = window.__unocss_runtime.uno.config
+			const configColor = config.theme.colors
+			const configFamily = config.theme.fontFamily
 
-      configColor.darkMagenta = "#502050";
-      configColor.softPink = "#ee68a4";
-      configColor.darkGrayMagenta = "#937c7b";
-      configColor.lightGrayMagenta = "#f7f2f7";
-      configFamily.leagueSpartan = '"League Spartan",' + configFamily.sans;
-    </script>
+			configColor.darkMagenta = "#502050"
+			configColor.softPink = "#ee68a4"
+			configColor.darkGrayMagenta = "#937c7b"
+			configColor.lightGrayMagenta = "#f7f2f7"
+			configFamily.leagueSpartan = '"League Spartan",' + configFamily.sans
+		</script>
+		<style>
+			[un-cloak] {
+				display: none;
+			}
+		</style>
 
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script>
-      document.addEventListener("alpine:init", () => {
-        Alpine.data("rate", () => ({
-          rates: [
-            {
-              id: 1,
-              desc: "Rated 5 Stars in Reviews",
-            },
-            {
-              id: 2,
-              desc: "Rated 5 Stars in Report Guru",
-            },
-            {
-              id: 3,
-              desc: "Rated 5 Stars in BestTech",
-            },
-          ],
-        }));
+		<script src="//unpkg.com/alpinejs" defer></script>
+		<script>
+			document.addEventListener("alpine:init", () => {
+				Alpine.data("rating", () => ({
+					rates: [
+						{
+							id: 1,
+							desc: "Rated 5 Stars in Reviews",
+						},
+						{
+							id: 2,
+							desc: "Rated 5 Stars in Report Guru",
+						},
+						{
+							id: 3,
+							desc: "Rated 5 Stars in BestTech",
+						},
+					],
+				}))
 
-        Alpine.data("review", () => ({
-          reviews: [
-            {
-              id: 1,
-              profile: "images/image-colton.jpg",
-              name: "Colton Smith",
-              quote:
-                '" We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent! "',
-            },
-            {
-              id: 2,
-              profile: "images/image-irene.jpg",
-              name: "Irene Roberts",
-              quote:
-                '" Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery. "',
-            },
-            {
-              id: 3,
-              profile: "images/image-anne.jpg",
-              name: "Anne Wallace",
-              quote:
-                '" Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone! "',
-            },
-          ],
-        }));
-      });
-    </script>
-  </head>
-  <body class="bg-white font-leagueSpartan text-dark-gray-magenta">
-    <section class="p-6 relative">
-      <div
-        class="absolute bg-[url(images/bg-pattern-top-mobile.svg)] bg-no-repeat h-100 top-0 inset-x-0 -z-1 pointer-events-none"
-      ></div>
-      <div
-        class="absolute bg-[url(images/bg-pattern-bottom-mobile.svg)] bg-no-repeat h-130 inset-x-0 bottom-0 -z-1"
-      ></div>
+				Alpine.data("feedback", () => ({
+					reviews: [
+						{
+							id: 1,
+							profile: "images/image-colton.jpg",
+							name: "Colton Smith",
+							quote: '" We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent! "',
+						},
+						{
+							id: 2,
+							profile: "images/image-irene.jpg",
+							name: "Irene Roberts",
+							quote: '" Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery. "',
+						},
+						{
+							id: 3,
+							profile: "images/image-anne.jpg",
+							name: "Anne Wallace",
+							quote: '" Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone! "',
+						},
+					],
+				}))
+			})
+		</script>
+	</head>
+	<body class="bg-white font-leagueSpartan text-dark-gray-magenta" un-cloak>
+		<section class="p-6 relative" md="inset-0 mx-auto px-30 pt-14.75">
+			<div
+				class="absolute bg-[url(images/bg-pattern-top-mobile.svg)] bg-no-repeat h-100 top-0 inset-x-0 -z-1 pointer-events-none"
+				md="bg-[url(images/bg-pattern-top-desktop.svg)]"
+			></div>
+			<div
+				class="absolute bg-[url(images/bg-pattern-bottom-mobile.svg)] bg-no-repeat h-130 inset-x-0 bottom-0 -z-1"
+				md="bg-[url(images/bg-pattern-bottom-desktop.svg)] absolute right-0"
+			></div>
+			<div class="flex flex-col" md="flex-row">
+				<div class="mt-14.5" md="flex-1">
+					<h1
+						class="text-9.25 font-700 leading-8 text-center text-dark-magenta"
+						md="text-14 -tracking-0.5 leading-12 text-left mr-40"
+					>
+						10,000+ of our users love our products.
+					</h1>
+					<p
+						class="text-4.5 leading-6 mt-6 text-center"
+						md="text-left mr-35 mt-6.75"
+					>
+						We only provide great products combined with excellent
+						customer service. See what our satisfied customers are
+						saying about our services.
+					</p>
+				</div>
 
-      <div class="mt-14.5">
-        <h1 class="text-9.25 font-700 leading-8 text-center text-dark-magenta">
-          10,000+ of our users love our products.
-        </h1>
-        <p class="text-4.5 leading-6 mt-6 text-center">
-          We only provide great products combined with excellent customer
-          service. See what our satisfied customers are saying about our
-          services.
-        </p>
-      </div>
+				<div
+					x-data="rating"
+					class="flex flex-col gap-4 mt-11"
+					md="flex-1 items-end mt-21.5"
+				>
+					<template x-for="rate in rates">
+						<div
+							class="flex flex-col gap-2.5 flex-wrap items-center bg-light-gray-magenta py-3.25 rounded-2"
+							md="flex-row gap-8 py-3.75 px-8 w-111"
+							:class="rate.id === 2 ? 'md:mr-12' : rate.id === 1 ? 'md:mr-24' : '';"
+						>
+							<div class="flex gap-2">
+								<template x-for="i in 5">
+									<img src="images/icon-star.svg" alt="" />
+								</template>
+							</div>
+							<span
+								x-text="rate.desc"
+								class="text-4.25 font-700 text-dark-magenta"
+							></span>
+						</div>
+					</template>
+				</div>
+			</div>
 
-      <div x-data="rate" class="flex flex-col gap-4 mt-11">
-        <template x-for="rate in rates">
-          <div
-            class="flex flex-col gap-2.5 flex-wrap items-center bg-light-gray-magenta py-3.25 rounded-2"
-          >
-            <div class="flex gap-2">
-              <template x-for="i in 5">
-                <img src="images/icon-star.svg" alt="" />
-              </template>
-            </div>
-            <span
-              x-text="rate.desc"
-              class="text-4.25 font-700 text-dark-magenta"
-            ></span>
-          </div>
-        </template>
-      </div>
+			<div
+				x-data="feedback"
+				class="flex flex-col mt-12 gap-4"
+				md="flex-row justify-between mt-18.5"
+			>
+				<template x-for="review in reviews">
+					<div
+						class="flex flex-col gap-5 bg-dark-magenta rounded-2 px-8 pt-11 pb-8"
+						md="px-8 w-87.5 h-58.5"
+						:class="review.id === 2 ? 'md:mt-4' : review.id === 3 ? 'md:mt-8' : '';"
+					>
+						<div class="flex gap-6 items-start">
+							<img
+								:src="review.profile"
+								alt=""
+								class="rounded-full h-10"
+							/>
+							<div class="flex flex-col">
+								<h2
+									x-text="review.name"
+									class="text-4.25 font-700 leading-4 text-white"
+								>
+									Colton Smith
+								</h2>
+								<span class="text-4.25 text-soft-pink"
+									>Verified Buyer</span
+								>
+							</div>
+						</div>
+						<p
+							x-text="review.quote"
+							class="text-4 leading-5.5 font-500 text-white"
+						></p>
+					</div>
+				</template>
+			</div>
+		</section>
 
-      <div x-data="review" class="flex flex-col mt-12 gap-4">
-        <template x-for="review in reviews">
-          <div
-            class="flex flex-col gap-5 bg-dark-magenta rounded-2 px-8 pt-11 pb-8"
-          >
-            <div class="flex gap-6">
-              <img :src="review.profile" alt="" class="rounded-full h-10" />
-              <div class="flex flex-col">
-                <h2
-                  x-text="review.name"
-                  class="text-4.25 font-700 leading-4 text-white"
-                >
-                  Colton Smith
-                </h2>
-                <span class="text-4.25 text-soft-pink">Verified Buyer</span>
-              </div>
-            </div>
-            <p x-text="review.quote" class="text-4 leading-5.5 font-500 text-white"></p>
-          </div>
-        </template>
-      </div>
-    </section>
-
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
-  </body>
+		<div class="my-4 text-center opacity-70">
+			Challenge by
+			<a
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
+				class="underline mouse-pointer"
+				>Frontend Mentor</a
+			>. Coded by
+			<a
+				href="reshaditiya.com"
+				target="_blank"
+				class="underline mouse-pointer"
+				>Resha Aditiya</a
+			>.
+		</div>
+	</body>
 </html>
